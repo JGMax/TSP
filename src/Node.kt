@@ -436,7 +436,7 @@ class Node private constructor(private var defaultId: Double, private var x: Dou
 
         val startTime = System.currentTimeMillis()
         do {
-            perturbation( if (perturbationComplexity >= 0) perturbationComplexity else (size * 0.25).toInt() )
+            perturbation( if (perturbationComplexity >= 0) perturbationComplexity else (size * 0.2).toInt() )
             localSearch()
             if (getPathLen() < minLen) {
                 minLen = getPathLen()
@@ -474,7 +474,7 @@ class Node private constructor(private var defaultId: Double, private var x: Dou
 
             setPenalty()
 
-        } while (System.currentTimeMillis() - startTime < if(millis >= 0) millis else size * 70)
+        } while (System.currentTimeMillis() - startTime < if(millis >= 0) millis else size * 120)
 
         answer[0].removeAt(answer[0].lastIndex)
         answer[1].removeAt(answer[1].lastIndex)

@@ -15,8 +15,11 @@ fun main() {
     }
 
     val data = DataManager(array)*/
-    val numOfDots = 2000
+    val numOfDots = 3000
     val data = DataManager(numOfDots, maxCoordinate = 1000, seed = 123)
+
+    /*val data = DataManager("Input100.txt")
+    val numOfDots = data.getSize()*/
 
     data.writeDataToFile("Input$numOfDots.txt", data.getData())
 
